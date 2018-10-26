@@ -26,23 +26,14 @@
             </label>
             <input class="form_input" id="password" type="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must include one capital letter, one lower case letter, and at least one number." aria-describedby="passwordHint" autocomplete="current-password">
             <p class="form_hint" id="passwordHint">The password must be minimum 8 characters, and include one capital letter, one lower case letter, and at least one number. .</p>
-            
-      
             <input class="form_submit" type="submit" value="Login"> 
             <a href="/forgotPassword">Forgot password?</a>
-
-        <div id="success_message" style="width:100%; height:100%; display:none; ">
-            <h2>Welcome! login successfull!</h2> 
-            
-      <div class="error_message" style="width:100%; height:100%; display:none; ">
-                    <h2>Error</h2>
-                  <p>Sorry there was an error loging</p>
-</div>
-    </div>
-    </div>
-    
-
+                </button>            
+          </div>
+            <input class="form_submit" type="submit" value="Login"> 
+            <a href="/forgotPassword">Forgot password?</a>
     </form>
+        <script src="script.js"></script>
 </body>
 
 </html>
