@@ -36,10 +36,6 @@ a {
     margin: 0 0 1em 0;
 }
 
-.form__element-inner {
-    position: relative;
-}
-
 .form__label {
     font-size: 1.2em;
     display: block;
@@ -89,13 +85,4 @@ a {
 
 .has-error input {
     border: 2px solid #b0141d;
-}
-
-.form__toggle-password {
-    position: absolute;
-    top: 3px;
-    right: 1px;
-    padding: 1.2em;
-    background: #eee;
-    border: none;
 }
