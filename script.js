@@ -2,7 +2,23 @@
 var form = document.createElement('form');
 if ('checkValidity' in form && 'querySelector' in document && 'classList' in document.documentElement) {
 
-    // get all inputs
+    // feedback messages
+    var messageComponents = document.querySelectorAll("[data-message]");
+
+    if (messageComponents.length > 0) {
+
+        [].forEach.call(messageComponents, function(message) {
+            var messageButton = message.querySelector("[data-close-notification]");
+
+            messageButton.removeAttribute('hidden');
+
+            messageButton.addEventListener("click", function() {
+                this.parentElement.hidden = true;
+            });
+        });
+    }
+
+    // form validation
     var inputs = document.querySelectorAll("[data-error]");
 
     if (inputs.length > 0) {
@@ -22,6 +38,7 @@ if ('checkValidity' in form && 'querySelector' in document && 'classList' in doc
                     newMessage = oldMessage;
                 }
 
+
                 newMessage.innerText = message;
 
                 input.setAttribute('aria-describedby', 'alert-' + input.name);
@@ -38,11 +55,15 @@ if ('checkValidity' in form && 'querySelector' in document && 'classList' in doc
 
             }
         };
-        // loop over each input
+
         [].forEach.call(inputs, function(input) {
 
-            // check validation on blur
             input.addEventListener("blur", function(event) {
+
+                if (event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON') {
+                    return;
+                }
+
                 input.checkValidity();
 
                 if (input.checkValidity()) {
@@ -55,6 +76,30 @@ if ('checkValidity' in form && 'querySelector' in document && 'classList' in doc
                     toggleErrorMessage(input, true);
                 }
             });
+        });
+    }
+
+    // toggle password field between type="text" and type="password"
+    var togglePasswordButton = document.querySelector('[data-toggle-password]');
+
+    if (togglePasswordButton) {
+        var togglePasswordButtonText = togglePasswordButton.querySelector('span');
+        var passwordField = document.querySelector('[data-toggle-password-field]');
+        togglePasswordButton.removeAttribute('hidden');
+
+
+        togglePasswordButton.addEventListener('click', function() {
+            var isPressed = JSON.parse(this.getAttribute('aria-pressed'));
+
+            if (isPressed) {
+                passwordField.setAttribute('type', 'password');
+                this.setAttribute('aria-pressed', false);
+                togglePasswordButtonText.textContent = 'Show password';
+            } else {
+                passwordField.setAttribute('type', 'text');
+                this.setAttribute('aria-pressed', true);
+                togglePasswordButtonText.textContent = 'Hide password';
+            }
         });
     }
 }
