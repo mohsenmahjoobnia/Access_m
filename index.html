@@ -24,19 +24,20 @@
                 Password
                 <span class="form_required">required</span>
             </label>
-       <input data-toggle-password-field class="form_input" id="password" type="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must include one capital letter, one lower case letter, and at least one number." aria-describedby="passwordHint" autocomplete="current-password">
-            <p class="form_hint" id="passwordHint">The password must be minimum 8 characters, and include one capital letter, one lower case letter, and at least one number.</p>
-             <button type="button" hidden aria-pressed="false" class="form__toggle-password" data-toggle-password>
+              <div class="form__element-inner">
+                <input data-toggle-password-field class="form__input" id="password" type="password" name="password" required minlength="8" aria-describedby="passwordHint" autocomplete="current-password" data-error="Please use a password with at least 8 characters." data-empty="Please fill out this field">
+                <button type="button" hidden aria-pressed="false" class="form__toggle-password" data-toggle-password>
                     <span>Show password</span>
-                </button>            
-          </div>
+                </button>
+            </div>
 
-            <input class="form_submit" type="submit" value="Login"> 
-            <a href="/forgotPassword">Forgot password?</a>
-
-
+            <p class="form__hint" id="passwordHint">The password must be at least 8 characters long.</p>
+        </div>
+        <a href="/forgotPassword">Forgot password?</a>
+        <input class="form__submit" type="submit" value="Login">
     </form>
-        <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
