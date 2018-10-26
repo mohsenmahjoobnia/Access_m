@@ -32,7 +32,7 @@ if ('checkValidity' in form && 'querySelector' in document && 'classList' in doc
                 if (!oldMessage) {
                     newMessage = document.createElement("p");
                     newMessage.setAttribute('role', 'alert');
-                    newMessage.classList.add('form_error');
+                    newMessage.classList.add('form__error');
                     newMessage.setAttribute('id', 'alert-' + input.name);
                 } else {
                     newMessage = oldMessage;

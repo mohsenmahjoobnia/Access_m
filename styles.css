@@ -32,46 +32,46 @@ a {
 
 /* login form styles */
 
-.form_element {
+.form__element {
     margin: 0 0 1em 0;
 }
 
-.form_element-inner {
+.form__element-inner {
     position: relative;
 }
 
-.form_label {
+.form__label {
     font-size: 1.2em;
     display: block;
     margin: 0 0 0.4em 0;
 }
 
-.form_input {
+.form__input {
     width: 100%;
     padding: 0.6em;
     font-size: 1.3em;
     border: 2px solid ##eee;
 }
 
-.form_required {
+.form__required {
     float: right;
     font-size: 0.8em;
     background: #ddd;
     padding: 0.3em;
 }
 
-.form_hint {
+.form__hint {
     margin: 0;
     font-size: 1.1em;
 }
 
-.form_hint:before {
+.form__hint:before {
     content: "\1F6C8";
     font-size: 1.2em;
     margin: 0 0.2em 0 0;
 }
 
-.form_submit {
+.form__submit {
     background: #326f10;
     color: #fff;
     border: none;
@@ -80,7 +80,7 @@ a {
     float: right;
 }
 
-.form_error {
+.form__error {
     margin: 0;
     padding: 0.4em;
     color: #b0141d;
@@ -91,7 +91,7 @@ a {
     border: 2px solid #b0141d;
 }
 
-.form_toggle-password {
+.form__toggle-password {
     position: absolute;
     top: 3px;
     right: 1px;
